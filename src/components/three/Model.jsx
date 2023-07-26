@@ -4,10 +4,7 @@ import { Suspense } from 'react'
 
 // DAV=======================================
 export function Dav (props) {
-	const { nodes, materials } = useGLTF('public/gltf/B1_cerrada.gltf')
-	const { david } = props
-
-	console.log(david)
+	const { nodes, materials } = useGLTF('/gltf/B1_cerrada.gltf')
 	return (
 		<>
 
@@ -16,7 +13,7 @@ export function Dav (props) {
 					castShadow
 					receiveShadow
 					geometry={nodes['TQ_ARD-geom001'].geometry}
-					material={materials[{david}]}
+					material={materials[props.josue]}
 					name='meshPhongMaterial'
 					// material={new THREE.MeshPhongMaterial( { color: 0xff0000 } )}
 				/>
@@ -37,20 +34,15 @@ export function Dav (props) {
 	)
 }
 
-useGLTF.preload('public/gltf/B1_cerrada.gltf')
+useGLTF.preload('/gltf/B1_cerrada.gltf')
 
 
 // COMPONENT MODEL ============================
-const Model = ( props ) => {
-
-	const { propsName } = props
-
+const Model = () => {
 	return (
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
-
-
 			<Canvas
-				
+
 				style={{ width: '100%', margin: 'auto' }}
 				camera={{
 					view:
@@ -72,7 +64,7 @@ const Model = ( props ) => {
 				<pointLight position={[10, 10, 10]} />
 				<Suspense fallback={null}>
 
-					<Dav david={'TQ_ARD_front.001'} />
+					<Dav josue='TQ_ARD_front.001' />
 
 				</Suspense>
 				<OrbitControls autoRotate autoRotateSpeed={1} />
