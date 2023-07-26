@@ -1,0 +1,17 @@
+---
+import BookItem from '../components/Book/BookItem-old.astro';
+import B1_cerrada from '../components/three/B1_cerrada.jsx';
+import Model from '../components/three/Model.jsx'
+import Layout from '../layouts/Layout.astro';
+import BookTransition from './bookTransition.astro';
+---
+
+<Layout title="david">
+    <div class="m-auto w-2/3 flex justify-center gap-4 h-auto rounded-[]">
+        <Model client:load/>
+        <Model client:load/>
+        <Model client:load/>
+    </div>
+</Layout>
+
+<!-- <B1_cerrada client:load /> -->

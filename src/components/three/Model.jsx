@@ -43,7 +43,7 @@ const Model = () => {
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 
 			<Canvas
-				className='shadow-xl'
+				
 				style={{ width: '100%', margin: 'auto' }}
 				camera={{
 					view:

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { books } from "../data/books";
 import Title from "../components/Book/Title.astro";
+import Model from "../components/three/Model";
 
 const { book } = Astro.params
 
@@ -21,6 +22,11 @@ if (!info) {
         </svg>
         <span class="sr-only">Icon description</span>
       </a>
+
+      <div class="w-[22rem] h-[22rem]">
+        <Model client:visible/>
+      </div>
+      
     
       <div class="scale-50">
         <Title />
@@ -53,6 +59,7 @@ if (!info) {
         <p><strong>Autor:</strong> <span class="font-semibold text-gray-800">{info.author}</span></p>
       </aside>
     </div>
-    
+
+
   </main>
 </Layout>
