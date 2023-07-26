@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta name="twitter:site" content="@midudev" />
 		<meta name="view-transition" content="same-origin" />
 	</head>
-	<body>K
+	<body>
 		<div id="content">
 			<slot />
 		</div>
@@ -29,23 +29,142 @@ const { title } = Astro.props;
 
 	</body>
 </html>
+
+
 <style is:global>
+
 	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	@font-face {
+		font-family: 'ITC Eras Demi';
+		src: url('/ITC Eras Demi.ttf');
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+
+	--negro: rgb(39, 39, 39);
+	--blanco: rgb(222, 222, 222);
+	--sombra1: rgba(111, 111, 111, 0.2);
+	--sombra2: rgba(255, 255, 255, 1);
+	--auxiliar1: #dfac12;
+	--auxAmarillo: rgba(223, 173, 16, 0.2);
+	--auxiliar2: #00814a;
+
+	--marcado: rgb(rgb(0, 204, 255));
+
+	/* //tipografías */
+	--tipo-principal: Helvetica, Arial, sans-serif;
+	--tipo-secundaria: 'Open Sans', sans-serif;
+	--tipo-terciaria: 'Roboto', sans-serif;
+	--tipo-erasdemi: 'ITC Eras';
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--negro: #ececec;
 	}
-	code {
+}
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+	max-width: 100%;
+	width: 100%;
+	display: block;
+	/* opcional */
+	object-fit: cover;
+	/* opcional */
+	object-position: center center;
+}
+
+/* Configuramos anclas suaves */
+html {
+	scroll-behavior: smooth;
+}
+
+code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 
-	@keyframes fade-in {
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::selection {
+	background-color: var(--negro);
+	color: var(--blanco);
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+	width: 100%;
+	display: block;
+	fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+	min-height: 100vh;
+	font-size: 100%;
+	font-family: var(--tipo-principal);
+	color: var(--negro);
+	/* opcional */
+	line-height: 1.4em;
+	/* opcional */
+	hyphens: auto;
+	/* opcional */
+	font-smooth: always;
+	/* opcional */
+	-webkit-font-smoothing: antialiased;
+	/* opcional */
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fade-in {
 		from { opacity: 0; }
 	}
+
 </style>
 
 
