@@ -13,7 +13,7 @@ export function Dav (props) {
 					castShadow
 					receiveShadow
 					geometry={nodes['TQ_ARD-geom001'].geometry}
-					material={materials[props.josue]}
+					material={materials[props.sara]}
 					name='meshPhongMaterial'
 					// material={new THREE.MeshPhongMaterial( { color: 0xff0000 } )}
 				/>
@@ -38,7 +38,9 @@ useGLTF.preload('/gltf/B1_cerrada.gltf')
 
 
 // COMPONENT MODEL ============================
-const Model = () => {
+const Model = (props) => {
+	console.log(props.david)
+
 	return (
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 			<Canvas
@@ -64,7 +66,7 @@ const Model = () => {
 				<pointLight position={[10, 10, 10]} />
 				<Suspense fallback={null}>
 
-					<Dav josue='TQ_ARD_front.001' />
+					<Dav sara={props.david} />
 
 				</Suspense>
 				<OrbitControls autoRotate autoRotateSpeed={1} />
