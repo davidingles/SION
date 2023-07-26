@@ -1,10 +1,10 @@
 export const books = [
 	{
-		id: 'clean-code',
-		title: 'Clean Code: Manual de desarrollo ágil de software',
+		id: 'Bandeja Automontable',
+		title: 'Bandeja Automontable: ',
 		img: 'public/catalogo-png/1L0024.png',
-		opinion: 'Un clásico entre los clásicos del mundo de la programación. Aunque en pleno 2023 yo tengo una opinión un poco polémica. No me parece un libro que recomendaría a todo el mundo, especialmente a aquellas personas que están aprendiendo. Además, tiene un tono muy dogmático y existe gente que se lo toma, peligrosamente, como la biblia del desarrollo. Pero si eres capaz de leerlo tomando perspectiva, hay cosas interesantes que todavía están vigentes. Ojo que todos los ejemplos de código están basados en Java y mucha programación orientada a objetos.',
-		author: 'Robert C. Martin'
+		opinion: 'Bandeja Automontable: Diseño standard y basico de una bandeja automontable',
+		author: 'Auxiliar Manipuladora'
 	},
 	{
 		id: 'aprendiendo-git',
