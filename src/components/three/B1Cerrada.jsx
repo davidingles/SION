@@ -7,7 +7,7 @@ import { useGLTF } from "@react-three/drei";
 
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/models/B1_cerrada.gltf");
+  const { nodes, materials } = useGLTF("/gltf/B1Cerrada.gltf");
   return (
     <>
       
@@ -37,9 +37,9 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/models/B1_cerrada.gltf");
+useGLTF.preload("/gltf/B1Cerrada.gltf");
 
-const B1_cerrada = () => {
+const B1Cerrada = () => {
 
   return (
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
@@ -63,18 +63,7 @@ const B1_cerrada = () => {
         
               <Dav/>
 
-                {/* <Dav
-                  scale={.5}
-                  position={[-.0,0.1,-0.00]}
-                  rotation={[Math.PI / 1000, 0, 0]}
-                >
-                  <group>
-                    <mesh material={new THREE.MeshPhongMaterial( { color: 0xff00ff } )}/>
-                    <mesh/>
-                    <mesh/>
-                  </group>
-                </Dav> */}
-        
+      
             </Suspense>
             <OrbitControls autoRotate autoRotateSpeed={1} />
             <ContactShadows resolution={1024} scale={1} position={[0, -.01, 0]} blur={3} opacity={.3} far={1} color="#8a6246" />
@@ -82,4 +71,4 @@ const B1_cerrada = () => {
         </div>
   )
 }
-export default B1_cerrada
+export default B1Cerrada

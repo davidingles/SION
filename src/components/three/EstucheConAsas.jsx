@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/models/Estuche_con_asas.gltf");
+  const { nodes, materials } = useGLTF("/gltf/EstucheConAsas.gltf");
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0.162, 0]} rotation={[-Math.PI / 2, Math.PI / 2, 0]}>
@@ -13,7 +13,7 @@ export function Dav(props) {
           castShadow
           receiveShadow
           geometry={nodes["TQ_ARD-geom"].geometry}
-          material={materials.TQ_ARD_front}
+          material={materials["TQ_ARD_front"]}
         />
         <mesh
           castShadow
@@ -32,17 +32,18 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/models/Estuche_con_asas.gltf");
+useGLTF.preload("/gltf/EstucheConAsas.gltf");
 
 
 
-const Estuche_con_asas = () => {
+const EstucheConAsas = () => {
 
   return (
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
         
           <Canvas
-            style={{ width: '100%', margin:'auto'}}
+            className='border-8 border-orange-500'
+            style={{ width: '100vh', margin:'auto'}}
             camera={{view:
               {
                 enabled: true,
@@ -67,4 +68,4 @@ const Estuche_con_asas = () => {
         </div>
   )
 }
-export default Estuche_con_asas
+export default EstucheConAsas

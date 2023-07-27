@@ -8,7 +8,7 @@ export function Dav (props) {
 	return (
 		<>
 
-			<group {...props} dispose={null}>
+			<group {...props} dispose={null} className='border-blue-400'>
 				<mesh
 					castShadow
 					receiveShadow
@@ -44,19 +44,19 @@ const Model = (props) => {
 	return (
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 			<Canvas
-
-				style={{ width: '100%', margin: 'auto' }}
+				className='border-blue-400'
+				style={{ width: '100vh', margin: 'auto' }}
 				camera={{
 					view:
-				{
-					enabled: true,
-					fullWidth: 100,
-					fullHeight: 100,
-					offsetX: 0,
-					offsetY: -30,
-					width: 100,
-					height: 100
-				},
+						{
+							enabled: true,
+							fullWidth: 100,
+							fullHeight: 100,
+							offsetX: 0,
+							offsetY: -30,
+							width: 100,
+							height: 100
+						},
 					focus: 10,
 					fov: 80,
 					zoom: 6,

@@ -5,7 +5,7 @@ import { useGLTF } from "@react-three/drei";
 
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/models/Bandeja_acotada.gltf");
+  const { nodes, materials } = useGLTF("/gltf/BandejaAcotada.gltf");
   return (
     <group {...props} dispose={null}
       scale={.5}
@@ -76,9 +76,9 @@ export function Dav(props) {
   );
 }
 
-useGLTF.preload("/models/Bandeja_acotada.gltf");
+useGLTF.preload("/gltf/BandejaAcotada.gltf");
 
-const Bandeja_acotada = () => {
+const BandejaAcotada = () => {
 
   return (
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
@@ -109,4 +109,4 @@ const Bandeja_acotada = () => {
         </div>
   )
 }
-export default Bandeja_acotada
+export default BandejaAcotada
