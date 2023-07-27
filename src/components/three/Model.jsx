@@ -13,7 +13,7 @@ export function Dav (props) {
 					castShadow
 					receiveShadow
 					geometry={nodes['TQ_ARD-geom001'].geometry}
-					material={materials[props.sara]}
+					material={materials["TQ_ARD_front.001"]}
 					name='meshPhongMaterial'
 					// material={new THREE.MeshPhongMaterial( { color: 0xff0000 } )}
 				/>
@@ -39,8 +39,6 @@ useGLTF.preload('/gltf/B1Cerrada.gltf')
 
 // COMPONENT MODEL ============================
 const Model = (props) => {
-	console.log(props.david)
-
 	return (
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 			<Canvas
