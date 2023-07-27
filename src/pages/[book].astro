@@ -1,8 +1,12 @@
 ---
+const components = await import.meta.glob('../components/three/*.jsx')
+
+
 import Layout from "../layouts/Layout.astro";
 import { books } from "../data/books";
 import Title from "../components/Book/Title.astro";
 import Model from "../components/three/Model";
+
 
 const { book } = Astro.params
 
