@@ -1,6 +1,6 @@
 export const books = [
 	{
-		id: 'Bandeja Automontable',
+		id: 'Bandeja-Automontable',
 		title: 'Bandeja Automontable: ',
 		img: '/catalogo-png/1L0024.png',
 		opinion: 'Bandeja Automontable: Diseño standard y basico de una bandeja automontable',

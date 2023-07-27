@@ -1,1 +1,0 @@
-document.startViewTransition&&window.navigation.addEventListener("navigate",t=>{const n=new URL(t.destination.url);location.origin===n.origin&&t.intercept({async handler(){const e=await(await fetch(n.pathname)).text(),[,o]=e.match(/<body>([\s\S]*)<\/body>/i);document.startViewTransition(()=>{document.body.innerHTML=o,document.documentElement.scrollTop=0})}})});

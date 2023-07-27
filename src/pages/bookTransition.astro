@@ -2,16 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Book/Title.astro';
 import ListOfBooks from '../components/Book/ListOfBooks.astro';
-import ReloadButton from '../components/Book/Prueba.jsx';
+import ReloadButton from '../components/Book/ReloadButton.jsx';
 ---
+
 
 <Layout title="Libros de Programación recomendados por @midudev">
 	<main class="m-auto max-w-4xl">
 		<Title />
-
+		
+		<!-- ESTA FUNCION ES FUNDAMENTAL PARA RECARGAR LA PAGINA -->
 		<ReloadButton client:load />
+		
 
-		<ListOfBooks />
+		<ListOfBooks client:load />
 		
 	</main>
 </Layout>

@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime.391947bd.js";import"./index.ed373d49.js";const n=()=>{const o=()=>{window.location.reload(),console.log("first")};return r.jsx("button",{onClick:o,children:"Recargarrrr"})};export{n as default};
