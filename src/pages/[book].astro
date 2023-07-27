@@ -21,6 +21,11 @@ export function getStaticPaths() {
   ]
 }
 const components = import.meta.glob('../components/three/*.jsx')
+// components.array.forEach((component) => {
+//   console.log(component)
+// })
+
+
 const nombresDe3ds = [
   "Bandeja-Automontable",
   "aprendiendo-git",
@@ -32,12 +37,13 @@ const nombresDe3ds = [
 ---
 <Layout title={`Libro ${info.title}`}>
 
-  {
+
+  <!-- {
     nombresDe3ds.map((nombre) => {
       const Component = components[`../components/three/${info.id}.jsx`]
       return <Component />
     })
-  }
+  } -->
 
   <Model client:load="react" />
 
