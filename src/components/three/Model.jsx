@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 
 // DAV=======================================
 export function Dav (props) {
-	const { nodes, materials } = useGLTF('/gltf/B1_cerrada.gltf')
+	const { nodes, materials } = useGLTF('/gltf/B1Cerrada.gltf')
 	return (
 		<>
 
@@ -34,7 +34,7 @@ export function Dav (props) {
 	)
 }
 
-useGLTF.preload('/gltf/B1_cerrada.gltf')
+useGLTF.preload('/gltf/B1Cerrada.gltf')
 
 
 // COMPONENT MODEL ============================

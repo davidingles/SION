@@ -63,7 +63,7 @@ const EstucheConAsas = () => {
        
             </Suspense>
             <OrbitControls autoRotate autoRotateSpeed={1} />
-            <ContactShadows resolution={1024} scale={1} position={[0, -.01, 0]} blur={3} opacity={.3} far={1} color="#8a6246" />
+            <ContactShadows resolution={1024} scale={1} position={[0, -.03, 0]} blur={2} opacity={.6} far={1} color="#8a6246" />
           </Canvas>
         </div>
   )
