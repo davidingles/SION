@@ -1,12 +1,12 @@
 ---
-// const components = await import.meta.glob('../components/three/*.jsx')
-// export const prerender = true;
+import Prueba from "../components/Book/Prueba.astro";
 import BtnComprar from "../components/Book/BtnComprar.astro";
 import Layout from "../layouts/Layout.astro";
 import { books } from "../data/books";
 import Title from "../components/Book/Title.astro";
 import Model from "../components/three/Model";
 import BtnVolver from "../components/Book/BtnVolver.astro";
+import ReloadButton from "../components/Book/Prueba.jsx";
 
 const { book } = Astro.params
 
@@ -25,7 +25,10 @@ export function getStaticPaths() {
     {params: {book: "eloquent-javascript2"}},
   ]
 }
+
+
 ---
+
 
 <Layout title={`Libro ${info.title}`}>
   <main class="m-auto max-w-4xl">
@@ -54,6 +57,9 @@ export function getStaticPaths() {
           />
         </picture>
 
+        <ReloadButton />
+
+
         <Model client:load="react" />
 
         <BtnComprar />
@@ -70,13 +76,3 @@ export function getStaticPaths() {
 
   </main>
 </Layout>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const pictureElement = document.querySelector('picture');
-    const isVisible = pictureElement.getBoundingClientRect().top < window.innerHeight;
-    if (isVisible) {
-      location.reload();
-    }
-  });
-</script>
