@@ -5,6 +5,7 @@ import { books } from "../data/books";
 import Title from "../components/Book/Title.astro";
 import Model from "../components/three/Model";
 import BtnVolver from "../components/Book/BtnVolver.astro";
+
 const { book } = Astro.params
 const info = books.find(b => b.id === book)
 if (!info) {
@@ -21,29 +22,21 @@ export function getStaticPaths() {
   ]
 }
 const components = import.meta.glob('../components/three/*.jsx')
-// components.array.forEach((component) => {
-//   console.log(component)
-// })
+console.log(components)
 
+const threeComponent = Object.entries(components)
+console.log(threeComponent[0][0])
 
-const nombresDe3ds = [
-  "Bandeja-Automontable",
-  "aprendiendo-git",
-  "the-clean-coder",
-  "javascript-the-good-parts",
-  "eloquent-javascript",
-  "eloquent-javascript2",
-]
+// const nombresDe3ds = [
+//   "Bandeja-Automontable",
+//   "aprendiendo-git",
+//   "the-clean-coder",
+//   "javascript-the-good-parts",
+//   "eloquent-javascript",
+//   "eloquent-javascript2",
+// ]
 ---
 <Layout title={`Libro ${info.title}`}>
-
-
-  <!-- {
-    nombresDe3ds.map((nombre) => {
-      const Component = components[`../components/three/${info.id}.jsx`]
-      return <Component />
-    })
-  } -->
 
   <Model client:load="react" />
 
