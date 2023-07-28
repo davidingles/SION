@@ -1,8 +1,6 @@
-import { ContactShadows, Environment, OrbitControls, Stage } from '@react-three/drei'
+import { ContactShadows, OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
-// import { Dav } from './Dav'
-import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 
 
@@ -45,6 +43,8 @@ const B1Cerrada = () => {
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
         
           <Canvas
+            className='border-8 border-blue-500'
+
             style={{ width: '100%', margin:'auto'}}
             camera={{view:
               {

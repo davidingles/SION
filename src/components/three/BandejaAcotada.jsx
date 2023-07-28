@@ -84,6 +84,8 @@ const BandejaAcotada = () => {
         <div style={{backgroundColor: 'rgba(0,0,0,0)'}}>
         
           <Canvas
+            className='border-8 border-green-500'
+
             style={{ width: '100%', margin:'auto'}}
             camera={{view:
               {

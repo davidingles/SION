@@ -5,12 +5,23 @@ import { books } from "../data/books";
 import Title from "../components/Book/Title.astro";
 import Model from "../components/three/Model";
 import BtnVolver from "../components/Book/BtnVolver.astro";
+import EstucheConAsas from "../components/three/EstucheConAsas";
+import ReloadButton from '../components/Book/ReloadButton.jsx';
+
 
 const { book } = Astro.params
 const info = books.find(b => b.id === book)
 if (!info) {
   return Astro.redirect("/404")
 }
+
+const foo = await Astro.glob("../components/three/*")
+if (!foo) {
+  return Astro.redirect("/404")
+}
+
+
+
 export function getStaticPaths() {
   return [
     {params: {book: "Bandeja-Automontable"}},
@@ -21,33 +32,41 @@ export function getStaticPaths() {
     {params: {book: "eloquent-javascript2"}},
   ]
 }
-const components = import.meta.glob('../components/three/*.jsx')
-console.log(components)
 
-const threeComponent = Object.entries(components)
-console.log(threeComponent[0][0])
-console.log(info.three)
+// Importa los componentes que necesitas
+// import ComponentOne from '../components/three/ComponentOne.jsx';
+// import ComponentTwo from '../components/three/ComponentTwo.jsx';
 
-if(threeComponent[0][0] === info.three) {
-  console.log("son iguales")
-} else {
-  console.log("no son iguales")
-}
+// Decide qué componente quieres renderizar
+// let Component;
+// switch (info.three) {
+//   case 'ComponentOne':
+//     Component = ComponentOne;
+//     break;
+//   case 'ComponentTwo':
+//     Component = ComponentTwo;
+//     break;
+//   default:
+//     throw new Error(`Componente desconocido: ${info.three}`);
+// }
 
-// const nombresDe3ds = [
-//   "Bandeja-Automontable",
-//   "aprendiendo-git",
-//   "the-clean-coder",
-//   "javascript-the-good-parts",
-//   "eloquent-javascript",
-//   "eloquent-javascript2",
-// ]
 ---
-<Layout title={`Libro ${info.title}`}>
+<Layout title="catalogo">
 
-  <!-- <threeComponent2 client:load/> -->
-  <Model client:load="react" />
+  <!-- <script>
+		<ReloadButton client:load />
+  </script> -->
 
+  {foo.map((f) => {
+    if (f.default.name === info.three) {
+      return <div><f.default /></div>;
+    } else {
+      return null;
+    }
+  })}
+
+  <Model client:load />
+  
   <main class="m-auto max-w-4xl">
     <header class="relative">
       <BtnVolver/>
