@@ -26,6 +26,13 @@ console.log(components)
 
 const threeComponent = Object.entries(components)
 console.log(threeComponent[0][0])
+console.log(info.three)
+
+if(threeComponent[0][0] === info.three) {
+  console.log("son iguales")
+} else {
+  console.log("no son iguales")
+}
 
 // const nombresDe3ds = [
 //   "Bandeja-Automontable",
@@ -38,6 +45,7 @@ console.log(threeComponent[0][0])
 ---
 <Layout title={`Libro ${info.title}`}>
 
+  <!-- <threeComponent2 client:load/> -->
   <Model client:load="react" />
 
   <main class="m-auto max-w-4xl">
