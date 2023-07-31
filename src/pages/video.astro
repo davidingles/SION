@@ -1,24 +1,35 @@
-<div class="bg-white">
+---
+import Model from '../components/three/Model.jsx'
+---
+
+<div class="bg-white [&>div>video]:shadow-2xl mb-8 [&>div>video]:cursor-pointer [&>div>video:hover]:shadow-md [&>div>video]:transition [&>div>video]:duration-300 [&>div>video]:rounde-xl [&>div>video]:m-6 [&>div>video]:scale-110 [&>div>video]:ease-in-out [&>div>video:hover]:-translate-y-1">
     <div>
         Auxiliar
-    </div>
+    </div>    
     
-      <div class="flex w-full">
+      <div class="flex">
         <video autoplay loop muted>
           <source src="/ccc.webm" type="video/webm">
           Tu navegador no admite la reproducción de videos con fondo transparente.
-        </video>
+        </video>  
         <video autoplay loop muted>
           <source src="/ccc.webm" type="video/webm">
           Tu navegador no admite la reproducción de videos con fondo transparente.
-        </video>
+        </video>  
         <video autoplay loop muted>
           <source src="/ccc.webm" type="video/webm">
           Tu navegador no admite la reproducción de videos con fondo transparente.
-        </video>
+        </video>  
     
-      </div>
-    </template>
+      </div>  
+    </template>  
+</div>    
+
+
+<div class="flex flex-row">
+  <Model client:load />
+  <Model client:load />
+  <Model client:load />
 </div>
 
 <style>

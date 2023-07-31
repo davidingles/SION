@@ -40,11 +40,11 @@ useGLTF.preload('/gltf/B1Cerrada.gltf')
 // COMPONENT MODEL ============================
 const Model = (props) => {
 	return (
-		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
+		<div className='m-auto flex justify-center w-auto' style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 			<Canvas
 
-				className='border-orange-400 border-8'
-				style={{ width: '100vh', margin: 'auto' }}
+				// className='border-orange-400 border-8'
+				className='shadow-2xl p-4 rounded-xl hover:shadow-sm transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110'
 				camera={{
 					view:
 						{

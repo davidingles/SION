@@ -7,6 +7,7 @@ import Model from "../components/three/Model";
 import BtnVolver from "../components/Book/BtnVolver.astro";
 import EstucheConAsas from "../components/three/EstucheConAsas";
 import ReloadButton from '../components/Book/ReloadButton.jsx';
+import { callGetStaticPaths } from "astro/dist/core/render/route-cache";
 
 
 
@@ -21,17 +22,21 @@ if (!foo) {
   return Astro.redirect("/404")
 }
 
+// ESTA FUNCION DE callGetStaticPaths() ES NECESARIA PARA HACER EL BUILD
+// ========================================================================
+// export function getStaticPaths() {
+//   return [
+//     {params: {book: "Bandeja-Automontable"}},
+//     {params: {book: "aprendiendo-git"}},
+//     {params: {book: "the-clean-coder"}},
+//     {params: {book: "javascript-the-good-parts"}},
+//     {params: {book: "eloquent-javascript"}},
+//     {params: {book: "eloquent-javascript2"}},
+//   ]
+// }
 
-export function getStaticPaths() {
-  return [
-    {params: {book: "Bandeja-Automontable"}},
-    {params: {book: "aprendiendo-git"}},
-    {params: {book: "the-clean-coder"}},
-    {params: {book: "javascript-the-good-parts"}},
-    {params: {book: "eloquent-javascript"}},
-    {params: {book: "eloquent-javascript2"}},
-  ]
-}
+
+
 // OPCION DE CHAPGTP4 ======================
 // Importa los componentes que necesitas
 // import ComponentOne from '../components/three/ComponentOne.jsx';
