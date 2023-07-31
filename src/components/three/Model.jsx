@@ -8,12 +8,12 @@ export function Dav (props) {
 	return (
 		<>
 
-			<group {...props} dispose={null} className='border-blue-400'>
+			<group {...props} dispose={null}>
 				<mesh
 					castShadow
 					receiveShadow
 					geometry={nodes['TQ_ARD-geom001'].geometry}
-					material={materials["TQ_ARD_front.001"]}
+					material={materials['TQ_ARD_front.001']}
 					name='meshPhongMaterial'
 					// material={new THREE.MeshPhongMaterial( { color: 0xff0000 } )}
 				/>
@@ -42,7 +42,8 @@ const Model = (props) => {
 	return (
 		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
 			<Canvas
-				className='border-blue-400'
+
+				className='border-orange-400 border-8'
 				style={{ width: '100vh', margin: 'auto' }}
 				camera={{
 					view:

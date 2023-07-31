@@ -5,7 +5,7 @@ export const books = [
 		img: '/catalogo-png/1L0024.png',
 		opinion: 'Bandeja Automontable: Diseño standard y basico de una bandeja automontable',
 		author: 'Auxiliar Manipuladora',
-		three: 'B1Cerrada'
+		three: 'Model'
 		// three: 'Model client:load'
 	},
 	{

@@ -9,6 +9,7 @@ import EstucheConAsas from "../components/three/EstucheConAsas";
 import ReloadButton from '../components/Book/ReloadButton.jsx';
 
 
+
 const { book } = Astro.params
 const info = books.find(b => b.id === book)
 if (!info) {
@@ -21,7 +22,6 @@ if (!foo) {
 }
 
 
-
 export function getStaticPaths() {
   return [
     {params: {book: "Bandeja-Automontable"}},
@@ -32,7 +32,7 @@ export function getStaticPaths() {
     {params: {book: "eloquent-javascript2"}},
   ]
 }
-
+// OPCION DE CHAPGTP4 ======================
 // Importa los componentes que necesitas
 // import ComponentOne from '../components/three/ComponentOne.jsx';
 // import ComponentTwo from '../components/three/ComponentTwo.jsx';
@@ -53,19 +53,20 @@ export function getStaticPaths() {
 ---
 <Layout title="catalogo">
 
-  <!-- <script>
-		<ReloadButton client:load />
-  </script> -->
+  <!-- <miModelo /> -->
 
+<!-- EL MOTIVO POR EL QUE NO FUNCIONA ES PORQUE FALTA EL CLIENT:LOAD -->
   {foo.map((f) => {
     if (f.default.name === info.three) {
-      return <div><f.default /></div>;
+      return <f.default  />;
     } else {
       return null;
     }
   })}
 
-  <Model client:load />
+
+
+  <!-- <Model client:load /> -->
   
   <main class="m-auto max-w-4xl">
     <header class="relative">
@@ -95,3 +96,5 @@ export function getStaticPaths() {
   </main>
 
 </Layout>
+
+
