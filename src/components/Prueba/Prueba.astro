@@ -1,0 +1,98 @@
+---
+import HomeSvg from './HomeSvg.astro'
+import LoremIpsu from './LoremIpsu.astro';
+import SidebarFlowbite from './SidebarFlowbite.astro';
+---
+
+<!-- NAVBAR============================================ -->
+<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm">
+   <div class="navbar flex justify-center items-center border w-full">
+      <ul class="flex gap-4">
+         <li><a href="/home">Inicio</a></li>
+         <li><a href="/about">Acerca de nostros</a></li>
+         <li><a href="/contact">Contacto</a></li>
+         <li><a href="/contact">Productos</a></li>
+      </ul>
+   </div>
+
+<!-- SVG---HOME---========================== -->
+    <div class="text-center home p-2 w-[3rem] left-0 text-orange-400">
+        <HomeSvg/>
+    </div>
+</div>
+
+<!-- SIDEBAR============================================= -->
+<div id="drawer-navigation" class="is-active transition duration-500 transform fixed top-0 left-[-288px] z-40 w-64 h-screen p-4 overflow-y-auto bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+   <SidebarFlowbite/>
+</div>
+
+
+<!-- LOREMIPSU=======================================     -->
+<!-- <LoremIpsu/> -->
+
+<!-- MEDIA---QUERIES================================== -->
+<style>
+    @media screen and ( min-width : 888px ){
+        .navbar
+            {
+                transition: transform .5s ease;
+                transform: translateY(0rem);
+            }
+    }
+    @media screen and ( max-width : 887px ){
+        .navbar
+            {
+                transition: transform .5s ease;
+                transform: translateY(-5rem);
+            }
+    }
+    @media screen and ( min-width : 888px ){
+        .home{
+            transition: transform .5s ease;
+            transform: translateY(-3rem);
+        }
+    }
+    @media screen and ( max-width : 887px ){
+        .home{
+            transition: transform .5s ease;
+            transform: translateY(0rem);
+        }
+    }
+
+</style>
+
+<!-- SIDEBAR---SCRIPT================================  -->
+ <script>
+    const cruz = document.querySelector('.cruz')
+    const btn = document.querySelector('.text-center')
+    const side = document.querySelector('#drawer-navigation')
+    btn.addEventListener('click', david)
+    function david() {
+        if ( side.classList.contains('is-active')){
+            side.style.transform = 'translateX(288px)'
+            side.classList.remove('is-active')
+        } else {
+            side.style.transform = 'translate(-288px)'
+            side.classList.add('is-active')
+        }
+    }
+
+    const mediaQuery = window.matchMedia('(max-width: 666px)');
+    mediaQuery.addEventListener('change', handleMediaQuery);
+
+   function handleMediaQuery(event) {
+   if (event.matches) {
+         side.style.transform = 'translateX(-288)';
+         side.classList.add('is-active');
+      } else {
+         side.style.transform = 'translate(-288px)';
+         side.classList.remove('is-active');
+      }
+   }
+
+   cruz.addEventListener('click', cerrar)
+   function cerrar(){
+      side.style.transform = 'translate(-288px)';
+         side.classList.add('is-active');
+   }
+ </script>

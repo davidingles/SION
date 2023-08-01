@@ -8,11 +8,6 @@ import Title from "../components/Book/Title.astro";
 import BtnVolver from "../components/Book/BtnVolver.astro";
 import Component from "../components/Component.astro";
 
-import EstucheConAsas from "../components/three/EstucheConAsas";
-import B1Cerrada from "../components/three/B1Cerrada";
-import BandejaAcotada from "../components/three/BandejaAcotada";
-
-
 const { book } = Astro.params
 const info = books.find(b => b.id === book)
 if (!info) {
@@ -25,7 +20,8 @@ export function getStaticPaths() {
   return [
     {params: {book: "B1Cerrada"}},
     {params: {book: "BandejaAacotada"}},
-    {params: {book: "EstucheConAsas"}}  ]
+    {params: {book: "EstucheConAsas"}},
+    {params: {book: "ExpositorDM"}},  ]
 }
 ---
 <Layout title="catalogo">
