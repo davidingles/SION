@@ -25,5 +25,14 @@ export const books = [
 		author: 'Vicente Latorre',
 		three: 'EstucheConAsas'
 
+	},
+	{
+		id: 'ExpositorDM',
+		title: 'PLV y Expositores',
+		img: '/catalogo-png/3D EXPOSITOR DM.png',
+		opinion: '"Estuche practo para el transporte del usuario final',
+		author: 'Vicente Latorre',
+		three: 'ExpositorDM'
+
 	}
 ]
