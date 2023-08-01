@@ -15,10 +15,10 @@ const {
 ---
 
 
-<a class="hover:scale-105 inline-block transition-all hover:contrast-125 hover:shadow-2xl" href={`/${id}`}>
+<a class="hover:scale-105 object-cover inline-block transition-all hover:contrast-125 hover:shadow-2xl" href={`/${id}`}>
   <img
     alt={`Portada del libro ${title}`}
-    class="aspect-[389/500] h-full object-cover w-full max-w-full rounded"
+    class="aspect-[500/389] object-cover max-w-full rounded shadow-sombra2 transition-all duration-500 border-white border-2 hover:scale-105 hover:shadow-sombra1 translate-y-4 ease-in-out m-16" 
     src={img}
     style={`view-transition-name: book-${id}`}
   />

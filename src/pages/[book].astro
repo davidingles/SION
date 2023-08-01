@@ -30,22 +30,29 @@ export function getStaticPaths() {
 ---
 <Layout title="catalogo">
 
-  <Component david={info.three} client:load />
-
+  
   
   <main class="m-auto max-w-4xl">
     <header class="relative">
       <BtnVolver/>
-      <div class="scale-50">
-        <Title />
+
+      <div class="flex">
+        <div class="scale-50">
+          <Title />
+        </div>
+        <div class="">
+          <Component david={info.three} client:load />
+        </div>
       </div>
+
     </header>
+
     <div class="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
       <div class="flex flex-col mb-10">
         <a href="">
-          <picture class="mb-8 w-full relative border-8">
+          <picture class="mb-4">
             <img
-            class="aspect-[389/500] h-full object-cover w-full max-w-full rounded"
+            class="aspect-[500/389] h-full object-cover w-full max-w-full rounded"
             src={info.img}
             alt={`Portada del libro ${info.title}`}
             style={`view-transition-name: book-${info.id}`}
@@ -60,6 +67,7 @@ export function getStaticPaths() {
         <p><strong>Autor:</strong> <span class="font-semibold text-gray-800">{info.author}</span></p>
       </aside>
     </div>
+
   </main>
 
 </Layout>

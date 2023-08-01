@@ -39,12 +39,8 @@ useGLTF.preload('/gltf/B1Cerrada.gltf')
 
 const B1Cerrada = () => {
 	return (
-		<div style={{ backgroundColor: 'rgba(0,0,0,0)' }}>
-
+		<div>
 			<Canvas
-				className='border-8 border-blue-500'
-
-				style={{ width: '100%', margin: 'auto' }}
 				camera={{
 					view: {
 						enabled: true,
