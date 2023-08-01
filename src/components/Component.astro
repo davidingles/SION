@@ -1,0 +1,34 @@
+---
+
+import B1Cerrada from "./three/B1Cerrada";
+import BandejaAcotada from "./three/BandejaAcotada";
+import EstucheConAsas from "./three/EstucheConAsas";
+
+const { david } = Astro.props
+
+
+// let Component
+// switch (info.three) {
+//   case "EstucheConAsas":
+//     Component = EstucheConAsas
+//     break
+//   case "BandejaAcotada":
+//     Component = BandejaAcotada
+//     break
+//   case "B1Cerrada":
+//     Component = B1Cerrada
+//     break
+//   default:
+//     throw new Error(`Componente desconocido: ${info.three}`)
+// }
+---
+
+    {
+        david === "EstucheConAsas" ? <EstucheConAsas client:load /> : null
+    }
+    {
+        david === "BandejaAcotada" ? <BandejaAcotada client:load /> : null
+    }
+    {
+        david === "B1Cerrada" ? <B1Cerrada client:load /> : null
+    }

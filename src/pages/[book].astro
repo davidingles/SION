@@ -1,14 +1,16 @@
 ---
-import BtnComprar from "../components/Book/BtnComprar.astro";
 import Layout from "../layouts/Layout.astro";
-import { books } from "../data/books";
-import Title from "../components/Book/Title.astro";
-import Model from "../components/three/Model";
-import BtnVolver from "../components/Book/BtnVolver.astro";
-import EstucheConAsas from "../components/three/EstucheConAsas";
-import ReloadButton from '../components/Book/ReloadButton.jsx';
-import { callGetStaticPaths } from "astro/dist/core/render/route-cache";
 
+import { books } from "../data/books";
+
+import BtnComprar from "../components/Book/BtnComprar.astro";
+import Title from "../components/Book/Title.astro";
+import BtnVolver from "../components/Book/BtnVolver.astro";
+import Component from "../components/Component.astro";
+
+import EstucheConAsas from "../components/three/EstucheConAsas";
+import B1Cerrada from "../components/three/B1Cerrada";
+import BandejaAcotada from "../components/three/BandejaAcotada";
 
 
 const { book } = Astro.params
@@ -17,61 +19,19 @@ if (!info) {
   return Astro.redirect("/404")
 }
 
-const foo = await Astro.glob("../components/three/*")
-if (!foo) {
-  return Astro.redirect("/404")
-}
-
 // ESTA FUNCION DE callGetStaticPaths() ES NECESARIA PARA HACER EL BUILD
 // ========================================================================
-// export function getStaticPaths() {
-//   return [
-//     {params: {book: "Bandeja-Automontable"}},
-//     {params: {book: "aprendiendo-git"}},
-//     {params: {book: "the-clean-coder"}},
-//     {params: {book: "javascript-the-good-parts"}},
-//     {params: {book: "eloquent-javascript"}},
-//     {params: {book: "eloquent-javascript2"}},
-//   ]
-// }
-
-
-
-// OPCION DE CHAPGTP4 ======================
-// Importa los componentes que necesitas
-// import ComponentOne from '../components/three/ComponentOne.jsx';
-// import ComponentTwo from '../components/three/ComponentTwo.jsx';
-
-// Decide qué componente quieres renderizar
-// let Component;
-// switch (info.three) {
-//   case 'ComponentOne':
-//     Component = ComponentOne;
-//     break;
-//   case 'ComponentTwo':
-//     Component = ComponentTwo;
-//     break;
-//   default:
-//     throw new Error(`Componente desconocido: ${info.three}`);
-// }
-
+export function getStaticPaths() {
+  return [
+    {params: {book: "B1Cerrada"}},
+    {params: {book: "BandejaAacotada"}},
+    {params: {book: "EstucheConAsas"}}  ]
+}
 ---
 <Layout title="catalogo">
 
-  <!-- <miModelo /> -->
+  <Component david={info.three} client:load />
 
-<!-- EL MOTIVO POR EL QUE NO FUNCIONA ES PORQUE FALTA EL CLIENT:LOAD -->
-  {foo.map((f) => {
-    if (f.default.name === info.three) {
-      return <f.default  />;
-    } else {
-      return null;
-    }
-  })}
-
-
-
-  <!-- <Model client:load /> -->
   
   <main class="m-auto max-w-4xl">
     <header class="relative">
@@ -82,14 +42,16 @@ if (!foo) {
     </header>
     <div class="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
       <div class="flex flex-col mb-10">
-        <picture class="mb-8 w-full relative border-8">
-          <img
-          class="aspect-[389/500] h-full object-cover w-full max-w-full rounded"
-          src={info.img}
-          alt={`Portada del libro ${info.title}`}
-          style={`view-transition-name: book-${info.id}`}
-          />
-        </picture>
+        <a href="">
+          <picture class="mb-8 w-full relative border-8">
+            <img
+            class="aspect-[389/500] h-full object-cover w-full max-w-full rounded"
+            src={info.img}
+            alt={`Portada del libro ${info.title}`}
+            style={`view-transition-name: book-${info.id}`}
+            />
+          </picture>
+        </a>
         <BtnComprar />
       </div>
       <aside class="mt-10 md:mt-0">
