@@ -25,7 +25,7 @@ const { title } = Astro.props;
 	<body>
 		<main class="h-full flex flex-col justify-between  m-0 relative">
 			<div class="w-full m-auto flex flex-grow-0" id="content">
-				<Prueba />
+				<Prueba client:load />
 			</div>
 			<div class="flex h-full min-h-screen flex-grow">
 				<slot  />
