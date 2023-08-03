@@ -5,10 +5,10 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
 ---
 
 <!-- NAVBAR============================================ -->
-<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm">
-   <div class="navbar flex justify-center items-center border w-full">
-      <ul class="flex gap-4">
-         <li><a href="/home">Inicio</a></li>
+<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm animate-fade-up">
+   <div class="navbar flex justify-center items-center w-full">
+      <ul class="flex gap-4  font-eras">
+         <li><a class="" href="/home">Inicio</a></li>
          <li><a href="/about">Acerca de nostros</a></li>
          <li><a href="/contact">Contacto</a></li>
          <li><a href="/contact">Productos</a></li>
@@ -21,9 +21,10 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
     </div>
 </div>
 
+
 <!-- SIDEBAR============================================= -->
 <div id="drawer-navigation" class="is-active backdrop-blur-[20px] bg-opacity-60 transition duration-500 transform fixed top-0 left-[-288px] z-40 w-64 h-screen p-4 overflow-y-auto bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
-   <SidebarFlowbite/>
+    <SidebarFlowbite/>
 </div>
 
 
@@ -97,3 +98,29 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
          side.classList.add('is-active');
    }
  </script>
+
+ <style>
+    @keyframes underline {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: blue; /* Cambia el color a tu gusto */
+  animation: underline 0.5s ease-in-out;
+}
+
+li:hover::after {
+  width: 100%;
+}
+ </style>
