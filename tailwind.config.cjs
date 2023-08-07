@@ -31,8 +31,12 @@ module.exports = {
 				sombra2: '3px 3px 6px 1px rgba(0,0,0,.2), -3px -3px 20px 0px rgba(255,255,255,.4);'
 			}
 		},
-		plugins: [
-			require('tailwindcss-animated')
-		]
-	}
+		boxShadow: {
+			sombra1: '7px 7px 14px 1px rgba(0,0,0,.2), -7px -7px 20px 0px rgba(255,255,255,.4);',
+			sombra2: '3px 3px 6px 1px rgba(0,0,0,.2), -3px -3px 20px 0px rgba(255,255,255,.4);'
+		}
+	},
+	plugins: [
+		require('@tailwindcss/animated')
+	]
 }

@@ -67,7 +67,7 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
  <script>
     const cruz = document.querySelector('.cruz')
     const btn = document.querySelector('.text-center')
-    const side = document.querySelector('#drawer-navigation')
+    const side = document.querySelector('#drawer-navigation') as HTMLElement
     btn.addEventListener('click', david)
     function david() {
         if ( side.classList.contains('is-active')){
