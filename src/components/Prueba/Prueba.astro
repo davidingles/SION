@@ -8,10 +8,10 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
 <div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm animate-fade-up">
    <div class="navbar flex justify-center items-center w-full">
       <ul class="flex gap-4  font-eras">
-         <li><a class="" href="/home">Inicio</a></li>
-         <li><a href="/about">Acerca de nostros</a></li>
-         <li><a href="/contact">Contacto</a></li>
-         <li><a href="/contact">Productos</a></li>
+         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/home">Inicio</a></li>
+         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a  href="/about">Acerca de nostros</a></li>
+         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/contact">Contacto</a></li>
+         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/contact">Productos</a></li>
       </ul>
    </div>
 
@@ -99,28 +99,3 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
    }
  </script>
 
- <style>
-    @keyframes underline {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 0;
-  background-color: blue; /* Cambia el color a tu gusto */
-  animation: underline 0.5s ease-in-out;
-}
-
-li:hover::after {
-  width: 100%;
-}
- </style>

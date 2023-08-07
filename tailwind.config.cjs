@@ -12,20 +12,7 @@ module.exports = {
 				black: 'black',
 				aux2: 'var(--auxiliar2)'
 			},
-			animation: {
-				underline: 'underline 1s ease-in-out'
-			},
-			keyframes: {
-				underline: {
-					'0%': {
-						transform: 'scaleX(0)'
-					},
-					'100%': {
-						transform: 'scaleX(1)'
-					}
 
-				}
-			},
 			boxShadow: {
 				sombra1: '7px 7px 14px 1px rgba(0,0,0,.2), -7px -7px 20px 0px rgba(255,255,255,.4);',
 				sombra2: '3px 3px 6px 1px rgba(0,0,0,.2), -3px -3px 20px 0px rgba(255,255,255,.4);'
@@ -37,6 +24,6 @@ module.exports = {
 		}
 	},
 	plugins: [
-		require('@tailwindcss/animated')
+		require('tailwindcss-animated')
 	]
 }
