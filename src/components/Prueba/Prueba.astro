@@ -7,16 +7,16 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
 <!-- NAVBAR============================================ -->
 <div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm animate-fade-up">
    <div class="navbar flex justify-center items-center w-full">
-      <ul class="flex gap-4  font-eras">
-         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/home">Inicio</a></li>
-         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a  href="/about">Acerca de nostros</a></li>
-         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/contact">Contacto</a></li>
-         <li class="border-red-500 border-b-0 transition-all duration-300 hover:border-b-4"><a href="/contact">Productos</a></li>
+      <ul class="flex gap-4  font-eras text-aux [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem]">
+         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/home">Inicio</a></li>
+         <li class="transition-colors duration-500 hover:bg-slate-100"><a  href="/about">Acerca de nostros</a></li>
+         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/contact">Contacto</a></li>
+         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/contact">Productos</a></li>
       </ul>
    </div>
 
 <!-- SVG---HOME---========================== -->
-    <div class="text-center home p-2 w-[3rem] left-0 text-orange-400">
+    <div class="text-center home p-2 w-[3rem] left-0 text-aux">
         <HomeSvg/>
     </div>
 </div>
