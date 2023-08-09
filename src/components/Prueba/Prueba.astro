@@ -4,6 +4,12 @@ import LoremIpsu from './LoremIpsu.astro';
 import SidebarFlowbite from './SidebarFlowbite.astro';
 ---
 
+<div class="logo absolute top-4 left-4 z-50">
+
+    <img src="/svg/logo-aux.svg" alt="logotipo de la auxiliar">
+
+</div>
+
 <!-- NAVBAR============================================ -->
 <div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm animate-fade-up">
    <div class="navbar flex justify-center items-center w-full">
@@ -23,7 +29,7 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
 
 
 <!-- SIDEBAR============================================= -->
-<div id="drawer-navigation" class="is-active backdrop-blur-[20px] bg-opacity-60 transition duration-500 transform fixed top-0 left-[-288px] z-40 w-64 h-screen p-4 overflow-y-auto bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+<div id="drawer-navigation" class="is-active bg-slate-200 backdrop-blur-[10px]  bg-opacity-30  z-50 transition duration-500 transform fixed top-0 left-[-288px] w-64 h-screen p-4 overflow-y-auto dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
    <SidebarFlowbite/>
 </div>
 
@@ -58,6 +64,18 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
         .home{
             transition: transform .5s ease;
             transform: translateY(0rem);
+        }
+    }
+    @media screen and (min-width : 999px){
+        .logo{
+            transition: all 0.3s ease-in-out;
+            width: 15rem;
+        }
+    }
+    @media screen and (max-width : 999px){
+        .logo{
+            transition: all 0.3s ease-in-out;
+            width: 10rem;
         }
     }
 
