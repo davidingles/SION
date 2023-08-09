@@ -1,0 +1,44 @@
+<section
+    class='body-section h-screen w-screen relative overflow-hidden flex flex-col items-center'
+    data-header-color="black"
+    data-bg="black"
+    data-opacity=.0
+>
+
+<!-- //LOGO Y ENLACE -->
+    <div class='z-30 absolute h-full flex flex-col items-center w-screen'>
+        <header class='pt-40'>
+        
+                <img
+                    class='w-[22rem]'
+                    src='/svg/logo-aux.svg'
+                    alt=''
+                />
+            
+        </header>
+
+        <footer class='flex flex-col flex-grow flex-nowrap justify-end pb-24'>
+            <a
+                href='#'
+                class='bg-aux bg-opacity-20 border-2 border-red py-2 px-8 rounded-lg text-white hover:bg-white hover:text-black transitio-colors duration-300 backdrop-blur-xl'
+            >
+                Elige tu caja
+            </a>
+        </footer>
+    </div>
+    <!-- //VIDEO -->
+    <div class='z-10 absolute top-0 bottom-0 h-full'>
+        <video
+            id='miVideo'
+            class='h-full'
+            muted
+            autoplay
+            loop
+            src='/videos/playa.mp4'
+        ></video>
+    </div>
+
+
+
+    </div>
+</section>

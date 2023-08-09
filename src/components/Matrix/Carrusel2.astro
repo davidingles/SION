@@ -1,0 +1,114 @@
+<div
+    id='carrusel'
+    class='dil-carrusel'
+>
+    <div
+        id='pequeño'
+        class='dil-grande'
+    >
+        <img
+            id='img1'
+            class='dil-img'
+            src='/imagenes/nave.jpg'
+            alt='nave'
+        />
+        <img
+            id='img1'
+            class='dil-img'
+            src='/imagenes/cielo.jpg'
+            alt='nave'
+        />
+    </div>
+
+    <ul
+        id='boxPuntos'
+        class='box-puntos'
+    >
+        <li
+            id='puntos'
+            class='dil-punto'
+        ></li>
+        <li
+            id='puntos2'
+            class='dil-punto'
+        ></li>
+    </ul>
+</div>
+
+<style>
+    .dil-carrusel {
+        width: 66%;
+        /* border: solid 1px white; */
+        height: 60vh;
+        border-radius: 8px;
+        background: #e0e0e0;
+        /* box-shadow: 5px 5px 9px #c1c1c1, -5px -5px 9px #ffffff; */
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .dil-grande {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 200%;
+        height: 66%;
+        /* gap: 2rem; */
+        transition: all ease 0.5s;
+        transform: translateX(0%);
+    }
+
+    .dil-img {
+        border-radius: 0.3rem;
+        border: solid 1px white;
+        width: calc(100% / 2);
+        margin: 0 1rem;
+        box-shadow: 5px 5px 9px 0px rgba(0,0,0,.3), -5px -5px 5px -3px rgba(255,255,255,.5);
+    }
+    .box-puntos {
+        width: 100%;
+        /* border: solid 1px red; */
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .dil-punto {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        box-shadow: 5px 5px 9px #c1c1c1, -5px -5px 9px #ffffff;
+        cursor: pointer;
+    }
+    .dil-punto:hover{
+        box-shadow: 2px 2px 3px 0px rgba(0,0,0,.7), -5px -5px 5px -3px rgba(255,255,255,1);
+    }
+
+    .is-active {
+        background-color: orange;
+        border: solid 1px white;
+    }
+</style>
+
+<script>
+    'use sctrict'
+    const grande = document.querySelector('.dil-grande')
+    const puntos = document.querySelectorAll('.dil-punto')
+
+    puntos.forEach((punto, i) => {
+        let posicion = i
+        let op = `${posicion * -50}%`
+
+
+        punto.addEventListener('click', ()=>{
+            grande.style.transform = `translateX(${op})`
+            
+            puntos.forEach((punto,i)=>{
+                punto.classList.remove('is-active')
+            })
+            punto.classList.add('is-active')
+        })
+    })
+
+</script>

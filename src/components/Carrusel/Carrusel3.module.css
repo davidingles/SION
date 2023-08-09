@@ -1,0 +1,45 @@
+.carrusel{
+    width: 90%;
+    height: 60vh;
+    border: solid 1px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem;
+    overflow: hidden;
+
+    .grande{
+        width: 200%;
+        border: solid 5px blue;
+        display: flex;
+        justify-content: start;
+        overflow: hidden;
+        gap:2rem;
+
+        .img{
+            width: calc( 200% / 2);
+            object-fit: cover;
+        }
+    }
+
+    .ul{
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 3rem;
+        margin: 2rem;
+
+        .li{
+            width: 2rem;
+            height: 2rem;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+
+.prueba{
+    width: 111px;
+    height: 111px;
+}
