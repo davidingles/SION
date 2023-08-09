@@ -1,3 +1,17 @@
-<footer class="text-center py-2 text-sm absolute bottom-0 w-full m-auto bg-white bg-opacity-30 backdrop-blur-[10px]">
-    Aviso legal --- <a class="text-sky-700 hover:underline" href='https://twitter.com/addyosmani/status/1673755274853900289?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet%7Ctwtr%5Etrue'> Marca registrada @</a>
-</footer>
+---
+export interface Props {
+  david?: string
+}
+const {david} = Astro.props
+console.log({david})
+
+---
+
+<main class={david} >
+    ESTO ES UNA MIERDA
+    {david}
+    {console.log(david)}
+    <footer class= "text-center py-2 text-sm absolute bottom-0 w-full m-auto">
+        Aviso legal --- <a class="text-sky-700 hover:underline" href='https://twitter.com/addyosmani/status/1673755274853900289?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Etweet%7Ctwtr%5Etrue'> Marca registrada @</a>
+    </footer>
+</main>

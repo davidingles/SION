@@ -4,20 +4,20 @@ import LoremIpsu from './LoremIpsu.astro';
 import SidebarFlowbite from './SidebarFlowbite.astro';
 ---
 
-<div class="logo absolute top-4 left-4 z-50">
+<div class="logo  top-0 pt-4 left-4 fixed z-20 animate-fade-right">
 
     <img src="/svg/logo-aux.svg" alt="logotipo de la auxiliar">
 
 </div>
 
 <!-- NAVBAR============================================ -->
-<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-50 backdrop-blur-sm animate-fade-up">
+<div class="w-full top-0 left-0 flex fixed backdrop-blur-sm animate-fade-up">
    <div class="navbar flex justify-center items-center w-full">
-      <ul class="flex gap-4  font-eras text-aux [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem]">
-         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/home">Inicio</a></li>
-         <li class="transition-colors duration-500 hover:bg-slate-100"><a  href="/about">Acerca de nostros</a></li>
-         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/contact">Contacto</a></li>
-         <li class="transition-colors duration-500 hover:bg-slate-100"><a href="/contact">Productos</a></li>
+      <ul class="flex gap-4  font-eras text-aux [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem] [&>li:hover]:bg-slate-100 [&>li:hover]:bg-opacity-10 [&>li:hover]:brightness-125">
+         <li class="transition-colors duration-500"><a href="/home">Inicio</a></li>
+         <li class="transition-colors duration-500"><a  href="/about">Acerca de nostros</a></li>
+         <li class="transition-colors duration-500"><a href="/contact">Contacto</a></li>
+         <li class="transition-colors duration-500"><a href="/contact">Productos</a></li>
       </ul>
    </div>
 
