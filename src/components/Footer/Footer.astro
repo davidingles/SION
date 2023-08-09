@@ -6,9 +6,91 @@ export interface Props {
 const {david} = Astro.props
 ---
 
-<Modal />
-<main class=`${david} text-center py-2 text-sm absolute bottom-0 w-full` >
-    <footer class= "m-auto w-auto cursor-pointer hover:brightness-75 hover:border-sky-400 hover:border-2">
+
+<div class="modal1 w-full h-full bg-black fixed inset-0 flex justify-center item-end backdrop-blur-lg">
+    <div>
+      <Modal />
+      <button class="modal bg-red-500 text-white px-4 py-2 rounded mt-4">
+          Cerrar
+      </button>
+    </div>
+</div>
+<main class=`${david} text-center py-2 text-sm absolute bottom-0 w-full`>
+    <footer class= "aviso m-auto w-auto cursor-pointer hover:brightness-75 hover:border-sky-400 hover:border-2">
         Aviso legal --- <a class="text-sky-600 hover:underline" href='#'> Marca registrada @</a>
     </footer>
 </main>
+
+
+<script>
+      const modal1 = document.querySelector('.modal1')
+      const aviso = document.querySelector('.aviso')
+      aviso.addEventListener('click', () => {
+          modal1.classList.add('bg-opacity-5')
+          modal1.classList.add('pointer-events-none')
+          // modal1.classList.remove('bg-opacity-100')
+          modal1.classList.add('animate-slide-up')
+      })
+  
+  // const openModal = () => {
+  //     const modal = document.querySelector('.modal')
+  //     modal.addEventListener('click', () => {
+  //         modal.classList.remove('opacity-0')
+  //         modal.classList.remove('pointer-events-none')
+  //         modal.classList.add('opacity-100')
+  //         modal.classList.add('animate-slide-up')
+  //     })
+  // }
+</script>
+
+<style>
+    .animate-slide-up {
+      animation: slideUp 0.5s ease-in-out;
+    }
+  
+    @keyframes slideUp {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+
+
+<!-- <script>
+  const cruz = document.querySelector('.cruz')
+  const btn = document.querySelector('.text-center')
+  const side = document.querySelector('#drawer-navigation') as HTMLElement
+  btn.addEventListener('click', david)
+  function david() {
+      if ( side.classList.contains('is-active')){
+          side.style.transform = 'translateX(288px)'
+          side.classList.remove('is-active')
+      } else {
+          side.style.transform = 'translate(-288px)'
+          side.classList.add('is-active')
+      }
+  }
+
+  const mediaQuery = window.matchMedia('(max-width: 666px)');
+  mediaQuery.addEventListener('change', handleMediaQuery);
+
+ function handleMediaQuery(event) {
+ if (event.matches) {
+       side.style.transform = 'translateX(-288)';
+       side.classList.add('is-active');
+    } else {
+       side.style.transform = 'translate(-288px)';
+       side.classList.remove('is-active');
+    }
+ }
+
+ cruz.addEventListener('click', cerrar)
+ function cerrar(){
+    side.style.transform = 'translate(-288px)';
+       side.classList.add('is-active');
+ }
+</script> -->
