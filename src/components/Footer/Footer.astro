@@ -7,12 +7,15 @@ const {david} = Astro.props
 ---
 
 
-<div class="modal1 w-full h-full bg-black fixed inset-0 flex justify-center item-end backdrop-blur-lg">
-    <div>
-      <Modal />
-      <button class="modal bg-red-500 text-white px-4 py-2 rounded mt-4">
-          Cerrar
+<div class="modal1 w-full h-full bg-black bg-opacity-10 fixed top-full inset-0 flex justify-center item-end backdrop-blur-lg">
+    <div class="flex flex-col">
+      <Modal>
+        
+      <button type="button" class="boton text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+        <svg aria-hidden="true" class="cruz w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
       </button>
+        
+      </Modal>
     </div>
 </div>
 <main class=`${david} text-center py-2 text-sm absolute bottom-0 w-full`>
@@ -24,36 +27,29 @@ const {david} = Astro.props
 
 <script>
       const modal1 = document.querySelector('.modal1')
-      const modal = document.querySelector('.modal')
+      const boton = document.querySelector('.boton')
       const aviso = document.querySelector('.aviso')
       aviso.addEventListener('click', () => {
-          modal1.classList.add('bg-opacity-5')
+          modal1.classList.remove('top-full')
+          modal1.classList.add('top-0')
+          modal1.classList.remove('animate-slide-down')
+          modal1.classList.add('animate-slide-up')
           // modal1.classList.add('pointer-events-none')
           // modal1.classList.remove('bg-opacity-100')
-          modal1.classList.add('animate-slide-up')
+          // modal1.classList.add('animate-slide-up')
       })
-      modal.addEventListener('click', () => {
-          modal1.classList.remove('bg-opacity-5')
-          modal1.classList.remove('pointer-events-none')
-          // modal1.classList.add('bg-opacity-100')
+      boton.addEventListener('click', () => {
+          modal1.classList.remove('top-0')
+          modal1.classList.add('top-full')
           modal1.classList.remove('animate-slide-up')
           modal1.classList.add('animate-slide-down')
       })
   
-  // const openModal = () => {
-  //     const modal = document.querySelector('.modal')
-  //     modal.addEventListener('click', () => {
-  //         modal.classList.remove('opacity-0')
-  //         modal.classList.remove('pointer-events-none')
-  //         modal.classList.add('opacity-100')
-  //         modal.classList.add('animate-slide-up')
-  //     })
-  // }
 </script>
 
 <style>
     .animate-slide-up {
-      animation: slideUp 0.5s ease-in-out;
+      animation: slideUp 1s ease-in-out;
     }
   
     @keyframes slideUp {
@@ -65,15 +61,15 @@ const {david} = Astro.props
       }
     }
     .animate-slide-down {
-      animation: slideDown 0.5s ease-in-out;
+      animation: slideDown 1s ease-in-out;
     }
   
     @keyframes slideDown {
       0% {
-        transform: translateY(0%);
+        transform: translateY(-100%);
       }
       100% {
-        transform: translateY(100%);
+        transform: translateY(0%);
       }
     }
   </style>
