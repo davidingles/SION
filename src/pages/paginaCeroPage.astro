@@ -1,10 +1,22 @@
 ---
+import Camion from "../components/Matrix/Camion.astro";
+import Carrusel from "../components/Matrix/Carrusel.astro";
+import LandingHeader from "../components/Matrix/LandingHeader.astro";
 import PrimeraPagina from "../components/Matrix/PrimeraPagina.astro";
+import SegundaPagina from "../components/Matrix/SegundaPagina.astro";
+import TerceraPagina from "../components/Matrix/TerceraPagina.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <!-- <PaginaCero /> -->
 <Layout title="Auxi">
-    <PrimeraPagina />
+    <div class="flex flex-col">
+        <PrimeraPagina />
+        <SegundaPagina />
+        <TerceraPagina />
+        <Camion />
+        <LandingHeader />
+        <Carrusel />
+    </div>
 </Layout>
 
