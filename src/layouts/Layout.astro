@@ -6,9 +6,11 @@ export interface Props {
 	title?: string;
 	color?: string;
 	activeClass?: string;
+	modalBg?: string;
+	modalText?: string;
 }
 
-const { title, color, activeClass } = Astro.props;
+const { title, color, activeClass, modalBg='bg-black', modalText='text-white' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -33,7 +35,7 @@ const { title, color, activeClass } = Astro.props;
 				<slot />
 			</div>
 			<div class="flex flex-grow-0 z-50">
-				<Footer david='text-red-400'/>
+				<Footer modalBg={modalBg} modalText={modalText}/>
 			</div>
 		</main>
 
