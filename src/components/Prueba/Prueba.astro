@@ -2,27 +2,37 @@
 import HomeSvg from './HomeSvg.astro'
 import LoremIpsu from './LoremIpsu.astro';
 import SidebarFlowbite from './SidebarFlowbite.astro';
+
+export interface Props {
+    color?: string;
+    activeClass?: string
+}
+
+const { color, activeClass} = Astro.props;
 ---
 
-<div class="logo  top-0 pt-4 left-4 fixed z-20 animate-fade-right">
 
+<div class={`${activeClass} logo  top-0 pt-4 left-4 fixed z-20 animate-fade-right`}>
+
+    {console.log(activeClass)}
+    {console.log(color)}
     <img src="/svg/logo-aux.svg" alt="logotipo de la auxiliar">
 
 </div>
 
 <!-- NAVBAR============================================ -->
-<div class="w-full top-0 left-0 flex fixed backdrop-blur-sm animate-fade-up">
-   <div class="navbar flex justify-center items-center w-full">
-      <ul class="flex gap-4  font-eras text-aux [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem] [&>li:hover]:bg-slate-100 [&>li:hover]:bg-opacity-10 [&>li:hover]:brightness-125">
+<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-60 backdrop-blur-sm animate-fade-up pb-4">
+   <div class="navbar flex justify-center items-center w-full ">
+      <ul class={`${color} flex gap-4  font-eras  [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem] [&>li:hover]:bg-slate-50 [&>li:hover]:bg-opacity-50 [&>li:hover]:brightness-125`} >
          <li class="transition-colors duration-500"><a href="/home">Inicio</a></li>
          <li class="transition-colors duration-500"><a  href="/about">Acerca de nostros</a></li>
          <li class="transition-colors duration-500"><a href="/contact">Contacto</a></li>
-         <li class="transition-colors duration-500"><a href="/contact">Productos</a></li>
+         <li class="transition-colors duration-500"><a href="/bookTransition">Productos</a></li>
       </ul>
    </div>
 
 <!-- SVG---HOME---========================== -->
-    <div class="text-center home p-2 w-[3rem] left-0 text-aux">
+    <div class={`${color} text-center home p-2 w-[3rem] left-0 text-aux`}>
         <HomeSvg/>
     </div>
 </div>
@@ -117,3 +127,12 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
    }
  </script>
 
+<!-- PARA OCULTAR EL LOGO EN LOS COMPONENTES QUE NO QUIERO QUE SE VEA ======= -->
+<script>
+    const david = document.querySelector('div.is-active')
+    if (david){
+        const img = david.querySelector('img')
+        img.style.opacity='0'
+    }
+
+</script>
