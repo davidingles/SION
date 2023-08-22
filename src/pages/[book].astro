@@ -24,48 +24,67 @@ export function getStaticPaths() {
     {params: {book: "ExpositorDM"}},  ]
 }
 ---
-<Layout title="catalogo">
 
-  
-  
-  <main class="m-auto max-w-4xl mt-[4rem]">
-    <header class="relative">
-      <BtnVolver/>
+  <!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- <title>{title}</title> -->
+    <title> Auxi</title>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@midudev" />
+		<meta name="view-transition" content="same-origin" />
+	</head>
+	<!-- border-8 border-orange-200 -->
+	<body>
 
-      <div class="flex">
-        <div class="scale-50">
-          <Title />
+
+    <main class="m-auto max-w-4xl mt-[4rem]">
+      <header class="relative">
+        <BtnVolver/>
+    
+        <div class="flex">
+          <div class="scale-50">
+            <Title />
+          </div>
+          <div class="">
+            <Component david={info.three} client:load />
+          </div>
         </div>
-        <div class="">
-          <Component david={info.three} client:load />
+    
+      </header>
+    
+      <div class="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
+        <div class="flex flex-col mb-10">
+          <a href="">
+            <picture class="mb-4">
+              <img
+              class="aspect-[500/389] h-full object-cover w-full max-w-full rounded"
+              src={info.img}
+              alt={`Portada del libro ${info.title}`}
+              style={`view-transition-name: book-${info.id}`}
+              />
+            </picture>
+          </a>
+          <BtnComprar />
         </div>
+        <aside class="mt-10 md:mt-0">
+          <h1 class="text-5xl font-black mb-4">{info.title}</h1>
+          <p class="text-lg mb-4">{info.opinion}</p>
+          <p><strong>Autor:</strong> <span class="font-semibold text-gray-800">{info.author}</span></p>
+        </aside>
       </div>
+    
+    </main>
 
-    </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
-      <div class="flex flex-col mb-10">
-        <a href="">
-          <picture class="mb-4">
-            <img
-            class="aspect-[500/389] h-full object-cover w-full max-w-full rounded"
-            src={info.img}
-            alt={`Portada del libro ${info.title}`}
-            style={`view-transition-name: book-${info.id}`}
-            />
-          </picture>
-        </a>
-        <BtnComprar />
-      </div>
-      <aside class="mt-10 md:mt-0">
-        <h1 class="text-5xl font-black mb-4">{info.title}</h1>
-        <p class="text-lg mb-4">{info.opinion}</p>
-        <p><strong>Autor:</strong> <span class="font-semibold text-gray-800">{info.author}</span></p>
-      </aside>
-    </div>
 
-  </main>
+	</body>
+</html>
+  
 
-</Layout>
 
 
