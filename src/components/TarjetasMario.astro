@@ -2,7 +2,7 @@
 
 export interface Props{
     telefono: string;
-    jefes: 'vicente' | 'miguelAngel' | 'Jesus' | 'david' | 'Angelin' | 'diseño';
+    jefes: 'vicente' | 'miguelAngel' | 'Jesus' | 'david' | 'Angelin' | 'diseño' | 'logistica' | 'ventas' | 'administracion';
 
 }
 const { telefono, jefes } = Astro.props;
@@ -10,8 +10,8 @@ const { telefono, jefes } = Astro.props;
 ---
 
 
-<article class="relative w-[16rem] transition-all duration-300 ease">
-    <img class="" src=`./imagenes/jefes/${jefes}.jpg` alt="foto del jefe">
+<article class="relative w-[16rem] h-auto transition-all duration-300 ease">
+    <img class="" src=`./imagenes/jefes/${jefes}.png` alt="foto del jefe">
     <span class="absolute text-[2.5rem] font-bold bottom-0 left-4 right-0 m-auto whitespace-nowrap opacity-0 transform translate-y-20 transition-all duration-300 ease">{telefono}</span>
 </article>
 
