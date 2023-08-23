@@ -1,8 +1,17 @@
 ---
+import TarjetasMario from "../components/TarjetasMario.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
-<Layout modal="text-black">
-    añdksjfñadfjñadksfjña
+<Layout>
+    <main class="border-8 w-full flex justify-center items-center">
+        <div class="flex h-2/3 flex-wrap gap-8">
+            <TarjetasMario telefono="968 222 333" jefes="diseño" />
+            <TarjetasMario telefono="968 222 333" jefes="Jesus" />
+            <TarjetasMario telefono="968 222 333" jefes="david" />
+            <TarjetasMario telefono="968 222 333" jefes="miguelAngel" />
+        </div>
+    </main>
+
 </Layout>

@@ -1,0 +1,58 @@
+---
+
+export interface Props{
+    telefono: string;
+    jefes: 'vicente' | 'miguelAngel' | 'Jesus' | 'david' | 'Angelin' | 'diseño';
+
+}
+const { telefono, jefes } = Astro.props;
+
+---
+
+
+<article class="relative w-[16rem] transition-all duration-300 ease">
+    <img class="" src=`./imagenes/jefes/${jefes}.jpg` alt="foto del jefe">
+    <span class="absolute text-[2.5rem] font-bold bottom-0 left-4 right-0 m-auto whitespace-nowrap opacity-0 transform translate-y-20 transition-all duration-300 ease">{telefono}</span>
+</article>
+
+<style>
+
+    article img{
+        object-fit: cover;
+        width: 100%;
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,.5);
+        border-radius: 1rem;
+    }
+
+    article:hover{
+        transform: perspective(222px) rotateX(10deg) translateY(-16%) translateZ(0);
+    }
+
+    article:hover span{
+        opacity: 1;
+        transform: translateY(-22%);
+    }
+
+    article::before{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: 1px 22px 22px -15px rgba(0,0,0,.5);
+        background-image: linear-gradient(
+            to bottom,
+            transparent 10%,
+            rgba(255,255,255,.5) 50%,
+            rgba(255,255,255)95%
+        );
+        opacity: 0.0;
+        transition: all .3s ease;
+    }
+    article:hover::before{
+        opacity: 1;
+    }
+
+
+</style>
