@@ -5,7 +5,7 @@ import Prueba from '../components/Prueba/Prueba.astro';
 export interface Props {
 	title?: string;
 	color?: string;
-	activeClass?: string;
+	activeClass?: 'is-active' | 'is-inactive';
 	modalBg?: string;
 	modalText?: string;
 }
@@ -26,7 +26,7 @@ const { title, color, activeClass, modalBg='bg-black', modalText='text-white' } 
 		<meta name="view-transition" content="same-origin" />
 	</head>
 	<!-- border-8 border-orange-200 -->
-	<body>
+	<body class="relative">
 		<main class="h-full flex flex-col justify-between  m-0 relative">
 			<div class="w-full m-auto flex flex-grow-0 z-50" id="content">
 				<Prueba color={color} activeClass={activeClass}/>
@@ -34,7 +34,7 @@ const { title, color, activeClass, modalBg='bg-black', modalText='text-white' } 
 			<div class="flex h-full min-h-screen flex-grow">
 				<slot />
 			</div>
-			<div class="flex flex-grow-0 z-50">
+			<div class="z-50 fixed bottom-0 m-auto flex justify-center w-full">
 				<Footer modalBg={modalBg} modalText={modalText}/>
 			</div>
 		</main>
@@ -47,9 +47,9 @@ const { title, color, activeClass, modalBg='bg-black', modalText='text-white' } 
 
 	:root {
 		@font-face {
-			font-family: 'ITC Eras Demi';
-			src: url('/ITC Eras Demi.ttf');
-		}
+				font-family: 'ITC Eras Demi';
+				src: url('/ITC Eras Demi.ttf');
+			}
 
 		--negro: rgb(39, 39, 39);
 		--blanco: rgb(222, 222, 222);

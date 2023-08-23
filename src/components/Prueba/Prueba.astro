@@ -5,14 +5,14 @@ import SidebarFlowbite from './SidebarFlowbite.astro';
 
 export interface Props {
     color?: string;
-    activeClass?: string
+    activeClass?: 'is-active' | 'is-inactive';
 }
 
-const { color, activeClass} = Astro.props;
+const { color, activeClass = 'is-inactive'} = Astro.props;
 ---
 
-
-<div class={`${activeClass} logo  top-0 pt-4 left-4 fixed z-20 animate-fade-right`}>
+<!-- LOGO DE LA AUXILIAR =================================== -->
+<div class={`${activeClass} logo m-[1rem] z-50 animate-fade-right`}>
 
     {console.log(activeClass)}
     {console.log(color)}
@@ -132,7 +132,7 @@ const { color, activeClass} = Astro.props;
     const david = document.querySelector('div.is-active')
     if (david){
         const img = david.querySelector('img')
-        img.style.opacity='0'
+        img.style.display='none'
     }
 
 </script>

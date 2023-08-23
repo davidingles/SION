@@ -1,5 +1,4 @@
 ---
-import Carrusel3 from "../components/Carrusel/Carrusel3.astro";
 import Carrusel2 from "../components/Matrix/Carrusel2.astro";
 import PaginaCero from "../components/Matrix/PaginaCero.astro";
 import PrimeraPagina from "../components/Matrix/PrimeraPagina.astro";
@@ -17,15 +16,17 @@ import Layout from "../layouts/Layout.astro";
         activeClass = 'is-active'
     >
 
-<!-- CON FOTO AEREA DE LA NAVE -->
-    <!-- <SegundaPagina/> -->
-
-
-<!-- CON VIDEO DE CAJAS EN MOVIMIENTO -->
-        <!-- <PrimeraPagina/> -->
-
-<!-- CARRUSEL MAS O MENOS BUENO PARA USAR EN EL FUTURO -->
-    <!-- <Carrusel2/> -->
+    
+    
+    <main class="flex flex-col">
+        <!-- CON VIDEO DE CAJAS EN MOVIMIENTO -->
+        <PrimeraPagina/>
+        
+        <!-- CON FOTO AEREA DE LA NAVE -->
+        <SegundaPagina/>
+        <!-- CARRUSEL MAS O MENOS BUENO PARA USAR EN EL FUTURO -->
+        <!-- <Carrusel2/> -->
+    </main>
 
 
     </Layout>
