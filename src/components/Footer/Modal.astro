@@ -7,44 +7,35 @@ const { modalBg, modalText} = Astro.props;
 ---
 
 
-<div class={`${modalBg} ${modalText} absolute top-[3rem] z-50 w-1/2 h-auto left-0 right-0 m-auto bg-opacity-10 p-[2rem] rounded-[1rem] backdrop-blur-2xl border-red-900`}>
+<div class={`${modalBg} ${modalText} absolute top-[3rem] bottom-[3rem] z-50 w-1/2 h-auto left-0 right-0 m-auto bg-opacity-10 p-[2rem] rounded-[1rem] backdrop-blur-2xl border-red-900 scrollable-container`}>
     <slot/>
     <p class="mt-6">
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
-        esto es una ventana modal
+        LEY DE PROTECCIÓN DE DATOS
         <br>
         <br>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab culpa quam dignissimos suscipit nihil ducimus totam error quasi aliquam ipsam impedit commodi laborum, amet tenetur optio soluta alias? Deleniti, distinctio!
+        El propósito de este Aviso Legal, es informar a los usuarios de www.laauxiliar.es, domiciliada en C/ Los Mateos, nº 1, Lorquí, 30564 - Murcia, cuya razón social del Responsable del fichero es AUXILIAR MANIPULADORA DEL CARTON, S.L., de cual es su política de protección de la privacidad y confidencialidad de los datos de carácter personal que sus usuarios facilitan de forma libre y voluntaria.
         <br>
+        La recogida y tratamiento automatizado de los datos de carácter personal tiene como finalidad principal el poder servir la información que los usuarios de la web nos solicitan a través de esta vía.
         <br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, odit. Nobis sapiente eius voluptates doloribus dolorem perferendis, quaerat perspiciatis cumque nihil dicta corporis enim reprehenderit necessitatibus nisi debitis molestias qui!
+        Los destinatarios de esta información únicamente serán los departamentos en que se divide la empresa y entes colaboradores oportunos para el desempeño de sus atribuciones y objeto social (que únicamente acceden a los datos en los términos del art. 12 LOPD, sin que ello comporte en ningún caso una comunicación de los datos), así como la cesión a los estamentos oficiales públicos o privados que lo exijan por Ley.
+        <br>
+        En el período de tiempo que transcurra entre la solicitud de consulta y nuestra respuesta se garantiza el ejercicio de los derechos de acceso, cancelación, rectificación, oposición del usuario, a sus datos de carácter personal que forman parte de nuestro fichero. Para ello dirigirá su solicitud a través del correo electrónico info@laauxiliar.es o bien a la dirección postal C/ Los Mateos, nº 1, Lorquí, 30564 - Murcia.
+        <br>
+        La Web www.laauxiliar.es ha adoptado las medidas de índole técnica y organizativas necesarias, según el nivel de seguridad de protección de datos que le corresponde legalmente, para garantizar la seguridad del tratamiento de datos de carácter personal que constituyen su fichero automatizado. Sin embargo, el usuario debe ser consciente de que en la actualidad las medidas de seguridad en Internet no son inexpugnables y por lo tanto no se está a salvo de posibles intromisiones ilegales e indebidas, que no serían responsabilidad de AUXILIAR MANIPULADORA DEL CARTON, S.L., ya que ella ha actuado con la diligencia debida para proteger los datos conforme determina la ley.
+        <br>
+        La Web no hace uso de ningún tipo de tratamiento invisible.
+        <br>
+        La Web www.laauxiliar.es hará todo lo posible porque sus datos estén siempre actualizados. No obstante, la responsabilidad acerca de la calidad de los datos depende del titular de ellos, de ahí que si existe alguna modificación de los datos el usuario de la web los comunicará al Responsable del Fichero, declinando este toda responsabilidad en caso de que omita su obligación de notificar los cambios.
+        <br>
+        La prestación del servicio de esta Web y las presentes condiciones de Uso del Sitio Web se rigen por la Ley española. Para cualquier discrepancia en la ejecución, interpretación, cumplimiento de estas condiciones, las partes se someten a los Juzgados y Tribunales de Murcia.
+        <br><br><br><br>
     </p>
 </div>
+
+
+<style>
+    .scrollable-container{
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+</style>
