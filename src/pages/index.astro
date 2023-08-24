@@ -2,12 +2,18 @@
 import Layout from "../layouts/Layout.astro"
 import Camion from "../components/Matrix/Camion.astro"
 import TarjetasMario from "../components/TarjetasMario.astro";
+import PrimeraPagina from "../components/Matrix/PrimeraPagina.astro";
 ---
 
 <Layout title="Auxiliar Manipuladora del Cartón">
     
+    <div class="w-full h-screen flex flex-col justify-start items-center  border-red-900 border-8">
+        <div class="h-2/3 border-blue-900 border-8 overflow-hidden flex flex-col justify-end items-end">
+            <PrimeraPagina />
+        </div>
+    </div>
     
-    <Camion />
+    <!-- <Camion /> -->
     
 
 </Layout>

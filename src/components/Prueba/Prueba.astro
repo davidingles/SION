@@ -24,7 +24,7 @@ const { color, activeClass = 'is-inactive'} = Astro.props;
 <div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-60 backdrop-blur-sm animate-fade-up pb-4">
    <div class="navbar flex justify-center items-center w-full ">
       <ul class={`${color} flex gap-4  font-eras  [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem] [&>li:hover]:bg-slate-50 [&>li:hover]:bg-opacity-50 [&>li:hover]:brightness-125`} >
-         <li class="transition-colors duration-500"><a href="/paginaCeroPage">Inicio</a></li>
+         <li class="transition-colors duration-500"><a href="/">Inicio</a></li>
          <li class="transition-colors duration-500"><a  href="/about">Acerca de nostros</a></li>
          <li class="transition-colors duration-500"><a href="/contacto">Contacto</a></li>
          <li class="transition-colors duration-500"><a href="/bookTransition">Productos</a></li>
@@ -128,11 +128,11 @@ const { color, activeClass = 'is-inactive'} = Astro.props;
  </script>
 
 <!-- PARA OCULTAR EL LOGO EN LOS COMPONENTES QUE NO QUIERO QUE SE VEA ======= -->
-<script>
+<!-- <script>
     const david = document.querySelector('div.is-active')
     if (david){
         const img = david.querySelector('img')
         img.style.display='none'
     }
 
-</script>
+</script> -->
