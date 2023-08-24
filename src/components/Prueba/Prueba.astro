@@ -12,7 +12,7 @@ const { color, activeClass = 'is-inactive'} = Astro.props;
 ---
 
 <!-- LOGO DE LA AUXILIAR =================================== -->
-<div class={`${activeClass} logo m-[1rem] z-50 animate-fade-right`}>
+<div class={`${activeClass} logo  z-50 animate-fade-right`}>
 
     {console.log(activeClass)}
     {console.log(color)}
@@ -21,7 +21,7 @@ const { color, activeClass = 'is-inactive'} = Astro.props;
 </div>
 
 <!-- NAVBAR============================================ -->
-<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-60 backdrop-blur-sm animate-fade-up pb-4">
+<div class="w-full top-0 left-0 flex fixed bg-white bg-opacity-60 backdrop-blur-sm animate-fade-up pb-2">
    <div class="navbar flex justify-center items-center w-full ">
       <ul class={`${color} flex gap-4  font-eras  [&>li]:p-4 [&>li]:rounded-xl [&>li]:mt-[.5rem] [&>li:hover]:bg-slate-50 [&>li:hover]:bg-opacity-50 [&>li:hover]:brightness-125`} >
          <li class="transition-colors duration-500"><a href="/">Inicio</a></li>
