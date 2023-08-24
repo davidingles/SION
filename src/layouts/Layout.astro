@@ -27,13 +27,17 @@ const { title, color, activeClass, modalBg='bg-black', modalText='text-white' } 
 	</head>
 	<!-- border-8 border-orange-200 -->
 	<body class="relative">
+
 		<main class="h-full flex flex-col justify-between  m-0 relative">
+
 			<div class="w-full m-auto flex flex-grow-0 z-50" id="content">
 				<Prueba color={color} activeClass={activeClass}/>
 			</div>
+
 			<div class="flex h-full min-h-screen flex-grow">
 				<slot />
 			</div>
+			
 			<div class="z-50 fixed bottom-0 m-auto flex justify-center w-full">
 				<Footer modalBg={modalBg} modalText={modalText}/>
 			</div>

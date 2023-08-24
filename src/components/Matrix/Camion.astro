@@ -1,22 +1,28 @@
-<section
-    class='bg-black h-screen w-screen relative overflow-hidden flex flex-col items-center'
+---
+import BtnVolver from "../Book/BtnVolver.astro";
+
+---
+<section  id="camion-section"
+    class='h-screen w-screen relative overflow-hidden flex flex-col items-center'
 >
-    <div class='-z-20 relative h-full flex flex-col items-center'>
-        <header class='pt-40 '>
 
-        </header>
+<a 
+    href='#contacto' 
+    type="button" 
+    class="absolute top-32 left-12 z-40 -rotate-90 text-white  border-red-800 border-8 bg-black hover:bg-blue-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-black dark:hover:bg-blue-950 dark:focus:ring-blue-800">
 
-        <footer class='flex flex-col flex-grow flex-nowrap justify-end pb-24'>
-            <a
-                href='#'
-                class='border-2 border-white py-2 px-8 rounded-lg text-white hover:bg-white hover:text-black transitio-colors duration-300 backdrop-blur-xl'
-            >
-                Elige una tu caja
-            </a>
-        </footer>
-    </div>
-    <div class='z-10 absolute top-0 bottom-0 h-full'>
-        <video
+    <svg class="w-4 h-4 rotate-270" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+    </svg>
+
+</a>
+
+
+
+<div class='z-10 absolute top-0 bottom-0 h-full'>
+
+
+    <video
             id="miVideo"
             class='h-full brightness-50'
             muted
