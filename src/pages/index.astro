@@ -3,28 +3,42 @@ import Layout from "../layouts/Layout.astro"
 import Camion from "../components/Matrix/Camion.astro"
 import TarjetasMario from "../components/TarjetasMario.astro";
 import PrimeraPagina from "../components/Matrix/PrimeraPagina.astro";
+import ReloadButton from "../components/Book/ReloadButton";
+import ListOfBooks from "../components/Book/ListOfBooks.astro";
+import Title from "../components/Book/Title.astro";
 ---
 
 <Layout title="Auxiliar Manipuladora del Cartón">
-    
-    <div class="w-screen -mt-[137px] max-h-screen flex flex-col justify-start items-center  border-red-900 border-8">
 
-        <div class="h-auto mt-[137px] border-blue-900 border-8 overflow-hidden flex flex-col justify-end items-center">
-            <PrimeraPagina />
-            
-            
-            <div class="w-2/3 p-8 text-slate-800 font-eras">
-                <p>
-                    Empresa dedicada a la fabricación de envases y embalajes de cartón ondulado y otros productos relacionados con el embalaje.
-                    <br>
-                    Cajas, bandejas, estuches, expositores, separadores, plancha paletizaje, etc.
-                </p>
+
+<!-- PRIMERA SECCION CON VIDEO Y PROLOGO==================     -->
+    <article class="h-full w-full flex flex-col">
+        <div class="w-screen -mt-[137px] max-h-screen flex flex-col justify-start items-center  border-red-900 border-8">
+            <div class="h-auto mt-[137px] border-blue-900 border-8 overflow-hidden flex flex-col justify-end items-center">
+                <PrimeraPagina />
+        
+        
+                <div class="w-2/3 p-8 text-slate-800 font-eras">
+                    <p>
+                        Empresa dedicada a la fabricación de envases y embalajes de cartón ondulado y otros productos relacionados con el embalaje.
+                        <br>
+                        Cajas, bandejas, estuches, expositores, separadores, plancha paletizaje, etc.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- <Camion /> -->
-    
+        
+        <main class="m-auto w-[80%] mt-[4rem]">
+                <Title />
+                
+                <!-- ESTA FUNCION ES FUNDAMENTAL PARA RECARGAR LA PAGINA -->
+                <ReloadButton client:load />
+                
+        
+                <ListOfBooks />
+                
+            </main>
+    </article>
 
 </Layout>
 
