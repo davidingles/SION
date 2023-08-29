@@ -13,31 +13,57 @@ import Title from "../components/Book/Title.astro";
 
 <!-- PRIMERA SECCION CON VIDEO Y PROLOGO==================     -->
     <article class="h-full w-full flex flex-col">
+        
         <div class="w-screen -mt-[137px] max-h-screen flex flex-col justify-start items-center  border-red-900 border-8">
             <div class="h-auto mt-[137px] border-blue-900 border-8 overflow-hidden flex flex-col justify-end items-center">
-                <PrimeraPagina />
-        
-        
-                <div class="w-2/3 p-8 text-slate-800 font-eras">
-                    <p>
-                        Empresa dedicada a la fabricación de envases y embalajes de cartón ondulado y otros productos relacionados con el embalaje.
-                        <br>
-                        Cajas, bandejas, estuches, expositores, separadores, plancha paletizaje, etc.
-                    </p>
+                <div class="relative">
+                    <div class="relative">
+                        <PrimeraPagina />
+                    </div>
+                    <div class="absolute top-[15rem] left-[5rem] z-50 text-black">
+                        <footer class='flex flex-col flex-grow flex-nowrap justify-end pb-8 animate-fade animate-delay-1000 animate-ease-in'>
+                            <a
+                                href='/bookTransition'
+                                class='bg-white bg-opacity-60 border-2 border-white py-2 p-8 rounded-lg text-current hover:bg-white hover:text-black transitio-colors duration-300 backdrop-blur-xl w-1/3'
+                            >
+                            <p class="whitespace-normal py-8">
+                                Empresa dedicada a la fabricación de envases y embalajes de cartón ondulado y otros productos relacionados con el embalaje.
+                                <br><br>
+                                Cajas, bandejas, estuches, expositores, separadores, plancha paletizaje, etc.
+                            </p>
+                            </a>
+                        </footer>
+                    </div>
                 </div>
+
+            </div>
+        </div>
+        <div class="w-screen -mt-[137px] max-h-screen flex flex-col justify-start items-center  border-red-900 border-8">
+            <div class="h-auto mt-[137px] border-blue-900 border-8 overflow-hidden flex flex-col justify-end items-center">
+                <div class="relative">
+                    <div class="relative">
+                        <PrimeraPagina />
+                    </div>
+                    <div class="absolute top-[15rem] left-[5rem] z-50 text-black">
+                        <footer class='flex flex-col flex-grow flex-nowrap justify-end pb-8 animate-fade animate-delay-1000 animate-ease-in'>
+                            <a
+                                href='/bookTransition'
+                                class='bg-white bg-opacity-60 border-2 border-white py-2 p-8 rounded-lg text-current hover:bg-white hover:text-black transitio-colors duration-300 backdrop-blur-xl w-1/3'
+                            >
+                            <p class="whitespace-normal py-8">
+                                Empresa dedicada a la fabricación de envases y embalajes de cartón ondulado y otros productos relacionados con el embalaje.
+                                <br><br>
+                                Cajas, bandejas, estuches, expositores, separadores, plancha paletizaje, etc.
+                            </p>
+                            </a>
+                        </footer>
+                    </div>
+                </div>
+
             </div>
         </div>
         
-        <main class="m-auto w-[80%] mt-[4rem]">
-                <Title />
-                
-                <!-- ESTA FUNCION ES FUNDAMENTAL PARA RECARGAR LA PAGINA -->
-                <ReloadButton client:load />
-                
-        
-                <ListOfBooks />
-                
-            </main>
+
     </article>
 
 </Layout>

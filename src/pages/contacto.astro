@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
     <div  class="flex flex-col">
-        <main id="contactooo" class="border-8 w-full h-screen flex">
+        <main id="contactooo" class="border-8 w-full min-h-screen flex">
             <div class="flex flex-wrap gap-8 m-auto justify-center items-center">
                 <TarjetasMario telefono="657 842 909" jefes="diseño" />
                 <TarjetasMario telefono="686 944 933" jefes="ventas" />
@@ -19,7 +19,9 @@ import Layout from "../layouts/Layout.astro";
         </main>
 
 <!-- EL ID DE CAMION ESTA EN EL COMPONENTE ========================= -->
-        <Camion />
+        <section class="min-h-screen">
+            <Camion />
+        </section>
 
     </div>
 
